@@ -30,6 +30,6 @@ resource "google_compute_instance" "vm_instance" {
   #  subnetwork = var.gke_subnet
     network    = var.vpc_network
   }
-} 
 
 metadata_startup_script = data.template_file.nodejs-startup.rendered
+}
