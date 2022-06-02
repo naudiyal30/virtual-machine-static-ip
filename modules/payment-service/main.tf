@@ -1,5 +1,5 @@
-resource "google_compute_address" "static-ip" {
-  name = "static"
+resource "google_compute_address" "static-ip2" {
+  name = "static2"
   address_type = "EXTERNAL"
   region = var.location
 }
@@ -19,7 +19,7 @@ resource "google_compute_instance" "vm_instance" {
   
   network_interface {
     access_config {
-       nat_ip = google_compute_address.static-ip.address
+       nat_ip = google_compute_address.static-ip2.address
     }
   #  subnetwork = var.gke_subnet
     network    = var.vpc_network
