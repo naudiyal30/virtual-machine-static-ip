@@ -1,7 +1,7 @@
 resource "google_compute_address" "static-ip" {
   name = "static"
   address_type = "EXTERNAL"
-  region = us-west1
+  region = var.location
 }
 
 resource "google_compute_instance" "vm_instance" {
