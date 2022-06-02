@@ -7,7 +7,7 @@ resource "google_compute_address" "static-ip2" {
 resource "google_compute_instance" "vm_instance" {
   name         = "payment-service"
   machine_type = var.machine_type
-  zone         = us-west1-a
+  zone         = "us-west1-a"
 
   boot_disk {
     initialize_params {
