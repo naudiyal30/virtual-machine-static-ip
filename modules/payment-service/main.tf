@@ -20,7 +20,7 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
 
-#  metadata_startup_script = file("./nodejs-startup.sh")
+  metadata_startup_script = file("./modules/payment-service/templates/nodejs-startup.sh")
 
   
   network_interface {
@@ -30,6 +30,4 @@ resource "google_compute_instance" "vm_instance" {
   #  subnetwork = var.gke_subnet
     network    = var.vpc_network
   }
-
-metadata_startup_script = data.template_file.nodejs-startup.rendered
 }
