@@ -4,11 +4,6 @@ resource "google_compute_address" "static-ip2" {
   region = var.location
 }
 
-data "template_file" "nodejs-startup" {
-  template = file("${path.module}/templates/nodejs-startup.sh")
-  vars     = local.template_vars
-}
-
 resource "google_compute_instance" "vm_instance" {
   name         = "payment-service"
   machine_type = var.machine_type
