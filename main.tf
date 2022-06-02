@@ -7,6 +7,6 @@ provider "google" {
   project_id           = var.project_id
   location            = var.location
 #  gke_subnet          = var.gke_subnet
-  vpc_network         = "default"
-  payment_service_machine_type  = e2-micro
+  vpc_network         = var.vpc_network
+  machine_type       = var.machine_type
 }

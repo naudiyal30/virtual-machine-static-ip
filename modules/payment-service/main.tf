@@ -6,7 +6,7 @@ resource "google_compute_address" "static-ip" {
 
 resource "google_compute_instance" "vm_instance" {
   name         = "payment-service"
-  machine_type = "e2-micro"
+  machine_type = var.machine_type
 
   boot_disk {
     initialize_params {
@@ -16,10 +16,11 @@ resource "google_compute_instance" "vm_instance" {
 
  # metadata_startup_script = file("./nodejs-startup.sh")
 
+  
   network_interface {
-
-    access_config {
-        nat_ip = google_compute_address.static-ip.address
-    }
+    access_config {}
+    subnetwork = var.gke_subnet
+    network    = var.vpc_network
+    nat_ip = google_compute_address.static-ip.address
   }
-}
+} 
