@@ -15,7 +15,7 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
 
- # metadata_startup_script = file("./nodejs-startup.sh")
+  metadata_startup_script = file("./nodejs-startup.sh")
 
   
   network_interface {
