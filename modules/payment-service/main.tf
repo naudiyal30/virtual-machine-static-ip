@@ -18,9 +18,10 @@ resource "google_compute_instance" "vm_instance" {
 
   
   network_interface {
-    access_config {}
+    access_config {
+       nat_ip = google_compute_address.static-ip.address
+    }
   #  subnetwork = var.gke_subnet
     network    = var.vpc_network
-    nat_ip = google_compute_address.static-ip.address
   }
 } 
