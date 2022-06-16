@@ -24,7 +24,7 @@ ln -s /opt/nodejs/bin/npm /usr/bin/npm
 # git requires $HOME and it's not set during the startup script.
 export HOME=/root
 git config --global credential.helper gcloud.sh
-git clone https://github.com/johnpapa/node-hello.git /opt/app/new-repo
+git clone https://github.com/naudiyal30/github-action-test.git /opt/app/new-repo
 
 # Install app dependencies
 cd /opt/app/new-repo
